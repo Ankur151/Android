@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Countries">
+        <item>USA</item>
+        <item>India</item>
+
+
+
+    </string-array>
+</resources>

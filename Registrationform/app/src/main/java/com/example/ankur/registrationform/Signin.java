@@ -21,21 +21,59 @@ TextView textView1;
         setContentView(R.layout.activity_signin);
         textView=findViewById(R.id.editText3);
         textView1=findViewById(R.id.editText8);
-        textView.setText(getIntent().getExtras().getString("username"));
-        textView1.setText(getIntent().getExtras().getString("password"));
+//        textView.setText(getIntent().getExtras().getString("username"));
+//        textView1.setText(getIntent().getExtras().getString("password"));
+
 //        SharedPreferences sharedPreferences=getSharedPreferences("mypref",MODE_PRIVATE);
 //        String str=sharedPreferences.getString("emailkey", "");
 //        String str1=sharedPreferences.getString("phonekey","");
 //        textView.setText(str);
 //        textView1.setText(str1);
+
+//        String str2=textView.getText().toString();
+//        String str3=textView1.getText().toString();
+//         if(str==str2){
+//             Toast toast= Toast.makeText(this,"Sucessful",Toast.LENGTH_SHORT);
+//             toast.show();
 //
-//        if(str.equals("1")){
-//            textView.setText(str);
-//            textView1.setText(str1);
-//            i=1;
-//        }
-
-
+//         }
+//         else{
+//             Toast toast= Toast.makeText(this,"UnSucessful",Toast.LENGTH_SHORT);
+//             toast.show();
+//         }
     }
 
+    public void check(View view) {
+        SharedPreferences sharedPreferences=getSharedPreferences("mypref",MODE_PRIVATE);
+        String str=sharedPreferences.getString("emailkey", "");
+        String str1=sharedPreferences.getString("phonekey","");
+
+        String str2=textView.getText().toString();
+        String str3=textView1.getText().toString();
+
+        Toast toast= Toast.makeText(this,str,Toast.LENGTH_SHORT);
+            toast.show();
+
+        Toast toast1= Toast.makeText(this,str1,Toast.LENGTH_SHORT);
+        toast1.setGravity(CENTER,0,0);
+        toast1.show();
+
+
+        Toast toast2= Toast.makeText(this,str2,Toast.LENGTH_SHORT);
+        toast2.show();
+
+        Toast toast3= Toast.makeText(this,str3,Toast.LENGTH_SHORT);
+        toast3.setGravity(CENTER,0,0);
+        toast3.show();
+
+//        if(str==str2){
+//            Toast toast= Toast.makeText(this,"Sucessful",Toast.LENGTH_SHORT);
+//            toast.show();
+//
+//        }
+//        else{
+//            Toast toast= Toast.makeText(this,"UnSucessful",Toast.LENGTH_SHORT);
+//            toast.show();
+//        }
+    }
 }

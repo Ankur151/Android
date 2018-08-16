@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.util.*;
 import android.widget.TextView;
@@ -15,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
 SharedPreferences sharedPreferences;
 TextView Email;
 TextView Password;
+DatabaseHelper mDatabaseHelper;
+private Button btnAdd,btnViewData;
+private EditText editText;
+
 public static final String mypreference="mypref";
 public static final String email="emailkey";
 public static final String phone="phonekey";

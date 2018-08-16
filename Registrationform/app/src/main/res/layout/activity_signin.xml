@@ -32,7 +32,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="19dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/editText3"
         android:layout_width="168dp"
         android:layout_height="35dp"
@@ -44,7 +44,7 @@
         android:text="Email id"
         android:layout_alignLeft="@+id/editText8" />
 
-    <TextView
+    <EditText
         android:id="@+id/editText8"
         android:layout_width="177dp"
         android:layout_height="35dp"
@@ -57,5 +57,15 @@
         android:textSize="25dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="28dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_marginBottom="121dp"
+        android:onClick="check"
+        android:text="Button" />
 
 </RelativeLayout>
