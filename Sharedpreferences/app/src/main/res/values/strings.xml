@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Registration form</string>
+    <string-array name="mynames">
+        <item>AndhraPradesh</item>
+        <item>ArunachalPradesh</item>
+        <item>Assam</item>
+        <item>Bihar </item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>HimachalPradesh </item>
+        <item>JammuKashmir</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>MadhyaPradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>TamilNadu</item>
+        <item>Tripura</item>
+        <item>UttarPradesh</item>
+        <item>WestBengal </item>
+        <item>Chhattisgarh</item>
+        <item>Uttarakhand</item>
+        <item>Jharkhand</item>
+        <item>Telangana</item>
+
+
+    </string-array>
+</resources>
