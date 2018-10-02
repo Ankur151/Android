@@ -1,5 +1,7 @@
 package com.example.ankur.instagramclone;
 
+import java.net.URI;
+
 public class Message {
     private String message;
     private String author;

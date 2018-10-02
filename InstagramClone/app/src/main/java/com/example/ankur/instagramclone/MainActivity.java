@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<Message> messages = new ArrayList<>();
-        messageAdapter = new MessageAdapter(messages);
+        messageAdapter = new MessageAdapter(this,messages);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(messageAdapter);
 
@@ -248,10 +249,13 @@ public class MainActivity extends AppCompatActivity {
             childEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                    Log.i(TAG, "getting data from firebase");
+                    Log.i(TAG, "getting data from firebase");
+
                     Message message = dataSnapshot.getValue(Message.class);
                     messageAdapter.messages.add(message);
                     messageAdapter.notifyDataSetChanged();
+
+                    Log.d("check",message.getPhotoUrl());
                 }
 
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {}

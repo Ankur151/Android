@@ -1,5 +1,7 @@
 package com.example.ankur.instagramclone;
 
+import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,14 +10,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageHolder> {
 
     public List<Message> messages;
+    private  Context context;
 
-    public MessageAdapter(List<Message> messages) {
+    public MessageAdapter(Context context, List<Message> messages) {
         this.messages = messages;
+        this.context = context;
     }
 
     @NonNull
@@ -30,7 +36,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
         boolean isPhotoMessage = messages.get(position).getPhotoUrl() != null;
         if (isPhotoMessage) {
             holder.message.setVisibility(View.GONE);
-            holder.authorName.setVisibility(View.GONE);
+            holder.authorName.setText(messages.get(position).getAuthor());
+            Glide.with(context)
+                    .load(messages.get(position).getPhotoUrl()).into(holder.imageView);
 
         } else {
             holder.imageView.setVisibility(View.GONE);
