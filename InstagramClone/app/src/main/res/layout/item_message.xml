@@ -4,28 +4,50 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/note_list_text">
 
     <ImageView
         android:id="@+id/photoImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300sp"
+        android:layout_weight="1"
         android:adjustViewBounds="true" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/timestamp" />
+
+    <TextView
+        android:id="@+id/authorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_weight="0"
+        android:fontFamily="casual"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        tools:message="Name" />
+
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/timestamp" />
 
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0sp"
         android:layout_weight="0"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:message="Message" />
-
-    <TextView
-        android:id="@+id/authorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:message="Name" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/timestamp" />
 
 </LinearLayout>
