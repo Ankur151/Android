@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
 
         messagesDatabaseReference = firebaseDatabase.getReference().child("messages");
         chatPhotoStorageReference = firebaseStorage.getReference().child("chat_photos");
 
         recyclerView = findViewById(R.id.recyclerView);
         imageView = findViewById(R.id.imageView);
-        editText = findViewById(R.id.editText);
-        button = findViewById(R.id.button);
+
 
         List<Message> messages = new ArrayList<>();
         messageAdapter = new MessageAdapter(messages);
@@ -100,35 +100,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.toString().trim().length() > 0) {
-                    button.setEnabled(true);
-                } else {
-                    button.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
-        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(DEFAULT_MSG_LENGTH_LIMIT)});
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Message message = new Message(editText.getText().toString(), username, null);
-                messagesDatabaseReference.push().setValue(message);
-
-                editText.setText("");
-            }
-        });
+//        editText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                if (charSequence.toString().trim().length() > 0) {
+//                    button.setEnabled(true);
+//                } else {
+//                    button.setEnabled(false);
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//            }
+//        });
+//        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(DEFAULT_MSG_LENGTH_LIMIT)});
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Message message = new Message(editText.getText().toString(), username, null);
+//                messagesDatabaseReference.push().setValue(message);
+//
+//                editText.setText("");
+//            }
+//        });
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
             childEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    Log.i(TAG, "getting data from firebase");
+//                    Log.i(TAG, "getting data from firebase");
                     Message message = dataSnapshot.getValue(Message.class);
                     messageAdapter.messages.add(message);
                     messageAdapter.notifyDataSetChanged();
