@@ -101,35 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        editText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//            }
 //
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                if (charSequence.toString().trim().length() > 0) {
-//                    button.setEnabled(true);
-//                } else {
-//                    button.setEnabled(false);
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//            }
-//        });
-//        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(DEFAULT_MSG_LENGTH_LIMIT)});
-//
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Message message = new Message(editText.getText().toString(), username, null);
-//                messagesDatabaseReference.push().setValue(message);
-//
-//                editText.setText("");
-//            }
-//        });
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
